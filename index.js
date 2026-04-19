@@ -16,11 +16,9 @@ app.post("/create-item", (req, res) => {
   console.log(req);
   res.json({ test: "succes" });
 });
-
 app.get("/", function (req, res) {
   res.render("harid");
 });
-
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
