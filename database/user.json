@@ -7,7 +7,7 @@
   "languages": ["Uzbek", "Korean", "English"],
   "skills": ["Html", "Css", "Js", "NodeJS", "Python"],
   "extra_skills": [
-    "Bootstrap",
+    "Bootstrap,",
     "Materialize",
     "Styling, Sass",
     "Django, Flask",

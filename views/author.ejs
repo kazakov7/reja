@@ -3,9 +3,299 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Portfolio</title>
   </head>
   <body>
-    <h1>Hello world</h1>
+    <div class="main_page">
+      <!-- Left sidebar -->
+      <div class="left_frame">
+        <div class="profile_frame">
+          <img
+            src="/author/box_images/Profile.svg"
+            alt=""
+            width="156px"
+            height="135px"
+          />
+          <div>
+            <strong><%=user.name%></strong>
+            <span><%=user.profession%></span>
+          </div>
+          <div class="social_icons">
+            <a href="#"
+              ><img src="/author/icon/social_icons/Facebook.jpg" alt=""
+            /></a>
+            <a href="#"
+              ><img src="/author/icon/social_icons/Instagram.jpg" alt=""
+            /></a>
+            <a href="#"
+              ><img src="/author/icon/social_icons/Twitter.jpg" alt=""
+            /></a>
+            <a href="#"
+              ><img src="/author/icon/social_icons/Linkeding.jpg" alt=""
+            /></a>
+            <a href="#"
+              ><img src="/author/icon/social_icons/Youtube.jpg" alt=""
+            /></a>
+            <a href="#"
+              ><img src="/author/icon/social_icons/dribble.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <div class="left_frame-line"></div>
+
+        <div class="about_frame">
+          <div>
+            <div class="about_title">Age:</div>
+            <span><%=user.age%></span>
+          </div>
+          <div>
+            <div class="about_title">Residence:</div>
+            <span><%=user.residence%></span>
+          </div>
+          <div>
+            <div class="about_title">Freelance:</div>
+            <span style="color: rgb(135, 201, 36)">available</span>
+          </div>
+          <div>
+            <div class="about_title">Addres:</div>
+            <span><%=user.address%></span>
+          </div>
+        </div>
+        <div class="left_frame-line"></div>
+
+        <div class="languages_frame">
+          <strong>Languages</strong>
+          <div class="language_desc">
+            <span><%=user.languages[0]%></span>
+            <span>100%</span>
+          </div>
+          <div class="lang_progress">
+            <div style="width: 100%"></div>
+          </div>
+
+          <div class="language_desc">
+            <span><%=user.languages[1]%></span>
+            <span>80%</span>
+          </div>
+          <div class="lang_progress">
+            <div style="width: 80%"></div>
+          </div>
+
+          <div class="language_desc">
+            <span><%=user.languages[2]%></span>
+            <span>60%</span>
+          </div>
+          <div class="lang_progress">
+            <div style="width: 60%"></div>
+          </div>
+        </div>
+        <div class="left_frame-line"></div>
+
+        <div class="skills_frame">
+          <strong>Skills</strong>
+          <div class="skill_desc">
+            <span><%=user.skills[0]%></span>
+            <span>90%</span>
+          </div>
+          <div class="skill_progress">
+            <div style="width: 90%"></div>
+          </div>
+
+          <div class="skill_desc">
+            <span><%=user.skills[1]%></span>
+            <span>85%</span>
+          </div>
+          <div class="skill_progress">
+            <div style="width: 85%"></div>
+          </div>
+
+          <div class="skill_desc">
+            <span><%=user.skills[2]%></span>
+            <span>80%</span>
+          </div>
+          <div class="skill_progress">
+            <div style="width: 80%"></div>
+          </div>
+          <div class="skill_desc">
+            <span><%=user.skills[3]%></span>
+            <span>75%</span>
+          </div>
+          <div class="skill_progress">
+            <div style="width: 75%"></div>
+          </div>
+          <div class="skill_desc">
+            <span><%=user.skills[4]%></span>
+            <span>85%</span>
+          </div>
+          <div class="skill_progress">
+            <div style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="left_frame-line"></div>
+
+        <div class="extra-skills_frame">
+          <strong>Extra skills</strong>
+          <div>
+            <img src="/author/icon/extra_skill.png" alt="" />
+            <%=user.extra_skills[0]%> <%=user.extra_skills[1]%>
+          </div>
+          <div>
+            <img src="/author/icon/extra_skill.png" alt="" />
+            <%=user.extra_skills[2]%>
+          </div>
+          <div>
+            <img src="/author/icon/extra_skill.png" alt="" />
+            <%=user.extra_skills[3]%>
+          </div>
+          <div>
+            <img src="/author/icon/extra_skill.png" alt="" />
+            <%=user.extra_skills[4]%>
+          </div>
+        </div>
+        <div class="left_frame-line"></div>
+      </div>
+
+      <!-- Middle Frame -->
+      <div class="midd_frame">
+        <!-- Middle frame top -->
+        <div class="midd_top">
+          <div>
+            <img
+              src="/author/icon/Ellipse 15.svg"
+              style="top: 40px; left: 70px"
+            />
+            <img
+              src="/author/icon/Ellipse 13.svg"
+              style="bottom: 15%; left: 57%"
+            />
+            <img
+              src="/author/icon/Ellipse 12.svg"
+              style="top: 12%; right: 50%"
+            />
+            <img
+              src="/author/icon/Ellipse 16.svg"
+              style="bottom: 7%; left: 10%"
+            />
+            <img
+              src="/author/icon/Polygon 1.svg"
+              style="bottom: 5%; right: 5%"
+            />
+            <img
+              src="/author/icon/Rectangle 51.svg"
+              style="top: 10%; right: 5%"
+            />
+            <img
+              src="/author/icon/Rectangle 52.svg"
+              style="bottom: 24%; left: 35%"
+            />
+          </div>
+          <div class="midd_top_info">
+            <strong><%=user.profession%> in <%=user.work_place%></strong>
+            <span
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+              volutpat feugiat placerat lobortis. Natoque rutrum semper sed
+              suspendisse nunc lectus.</span
+            >
+            <a href="#"
+              >HIRE ME
+              <i class="fa-solid fa-arrow-right" style="color: #2b2b2b"></i
+            ></a>
+          </div>
+          <img src="/author/box_images/main_menu_photo.png" alt="" />
+        </div>
+        <!-- Middle frame bottom -->
+        <div class="midd_bott">
+          <div class="my_services_info">
+            <strong>My Services</strong>
+            <span
+              >Amet minim mollit non deserunt ullamco est sit aliqua dolor
+              <br />
+              do amet sint. Velit officia consequat duis enim velit mollit.
+              <br />
+              lorem ipsum</span
+            >
+          </div>
+          <div class="services_wrapper">
+            <div class="service_card">
+              <img src="/author/menu_icon/Icons_coding.svg" alt="" />
+              <strong>Web Devolopment</strong>
+              <span>Blog, E0-Commerce</span>
+            </div>
+            <div class="service_card">
+              <img src="/author/menu_icon/Icons_illustration.jpg" alt="" />
+              <strong>UI/UX design</strong>
+              <span>Mobile App,Website Design</span>
+            </div>
+            <div class="service_card">
+              <img src="/author/menu_icon/Icons_Microphone.svg" alt="" />
+              <strong>Sound Design</strong>
+              <span>Voice Ower, Beat Making</span>
+            </div>
+            <div class="service_card">
+              <img src="/author/menu_icon/Icons_game-development.svg" alt="" />
+              <strong>Game Design</strong>
+              <span>Character Design, Props & Objects</span>
+            </div>
+            <div class="service_card">
+              <img src="/author/menu_icon/Icons_Photographer.svg" alt="" />
+              <strong>Photography</strong>
+              <span>Portrait, Product Photography</span>
+            </div>
+            <div class="service_card">
+              <strong>Advertising</strong>
+              <span
+                >Lorem ipsum dolor sit amet, <br />
+                consectetur adipiscing elit. Vitae <br />
+                nulla diam in ac dictum a urna <br />
+                viverra morbi.
+              </span>
+              <a href="#"
+                >Order now
+                <i class="fa-solid fa-angle-right" style="color: #ffb403"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rigght Sidebar -->
+      <div class="rigth_frame">
+        <img src="/author/menu_icon/Contrast.svg" alt="" />
+        <div class="menu_icons">
+          <div><i class="fa-solid fa-house"></i></div>
+          <div><i class="fa-regular fa-file-code"></i></div>
+          <div><i class="fa-solid fa-user-graduate"></i></div>
+          <div><i class="fa-solid fa-briefcase"></i></div>
+          <div><i class="fa-brands fa-blogger"></i></div>
+          <div><i class="fa-solid fa-message"></i></div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

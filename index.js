@@ -24,7 +24,7 @@ app.set("view engine", "ejs");
 
 //4: routing
 app.post("/create-item", function (req, res) {
-  res.json({ test: "succes" });
+  res.send("Bajarildi");
 });
 app.get("/author", function (req, res) {
   res.render("author", { user: user });
@@ -32,6 +32,9 @@ app.get("/author", function (req, res) {
 
 app.get("/", function (req, res) {
   res.render("harid");
+});
+app.get("/hello", function (req, res) {
+  res.send("Hi");
 });
 
 const server = http.createServer(app);
