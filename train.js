@@ -1,18 +1,22 @@
-//MIT TASK "A"
-function countLetter(a, word) {
-  let count = 0;
-  for (letter of word) {
-    if (letter === a) {
-      count++;
-    }
-  }
-  if (count <= 0) {
-    console.log("Bir hil harf yoq");
-  } else {
-    console.log("Topilgan harflar soni: ", count);
-  }
-}
-countLetter("a", "alia");
+// //MIT TASK "A"
+// let hisob = 0;
+// function countLetter(a, word) {
+//   if (typeof a == "number" || typeof word == "number") {
+//     return "Faqat string kirit";
+//   }
+
+//   for (const harf of word) {
+//     if (harf === a) {
+//       hisob++;
+//     }
+//   }
+
+//   if (hisob <= 0) {
+//     return "Bir hil harf yoqq";
+//   }
+//   return hisob;
+// }
+// console.log(countLetter(8, "alia"));
 
 //MIT 20&21 DARSLAR
 // console.log("JAck MA maslahatlari");
