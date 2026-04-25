@@ -31,14 +31,13 @@ app.get("/author", function (req, res) {
 });
 
 app.get("/", function (req, res) {
-  res.render("harid");
-});
-app.get("/hello", function (req, res) {
-  res.send("Hi");
+  res.render("reja");
 });
 
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
-  console.log(`The server is succesfully running. Port: ${PORT}`);
+  console.log(
+    `The server is succesfully running. Port: ${PORT}, http://localhost:${3000}/`,
+  );
 });
