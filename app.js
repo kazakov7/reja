@@ -15,11 +15,31 @@ app.set("view engine", "ejs");
 
 //4: routing
 app.post("/create-item", function (req, res) {
-  res.send("Bajarildi");
+  console.log("user entered /create-tem");
+  console.log(req.body);
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.send("something went wrong");
+    } else {
+      res.send("succes");
+    }
+  });
 });
 
 app.get("/", function (req, res) {
-  res.render("reja");
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.send("something went wrong");
+      } else {
+        res.render("reja", { items: data });
+      }
+    });
 });
 
 module.exports = app;
