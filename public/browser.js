@@ -32,3 +32,19 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
       console.log("Iltimos qaytadan urining!", err);
     });
 });
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("Aniq o'chirmoqchimisiz?")) {
+      axios
+        .post("/delete-me", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Iltimos qaytadan harakat qiling", err);
+        });
+    }
+  }
+});

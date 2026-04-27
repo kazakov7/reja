@@ -1,6 +1,7 @@
 const express = require("express");
 const res = require("express/lib/response");
 const app = express();
+const mongodb = require("mongodb");
 
 //mongodb conneect
 const db = require("./server").db();
@@ -21,6 +22,16 @@ app.post("/create-item", function (req, res) {
   db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
     res.json(data.ops[0]);
   });
+});
+
+app.post("/delete-me", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    (err, data) => {
+      res.json({ state: "success" });
+    },
+  );
 });
 
 app.get("/", function (req, res) {
