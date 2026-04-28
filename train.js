@@ -1,14 +1,25 @@
-//MIT TASK-B
-function countNum(word) {
-  let count = 0;
-  for (let letter of word) {
-    if (letter >= 0) {
-      count++;
-    }
+//MIT_TASK_C
+function count(word1, word2) {
+  const new_word = word1.split("");
+  if (word1.length == word2.length) {
+    return new_word.every((x) => word2.includes(x));
+  } else {
+    return "Harflar soni o'zaro teng emas";
   }
-  console.log(`Ushbu string ichidan ${count} ta raqam topildi`);
 }
-countNum("ad2a54y79wet0sfgb9");
+console.log(count("mitgroup", "gmtiprou"));
+
+// //MIT TASK-B
+// function countNum(word) {
+//   let count = 0;
+//   for (let letter of word) {
+//     if (letter >= 0) {
+//       count++;
+//     }
+//   }
+//   console.log(`Ushbu string ichidan ${count} ta raqam topildi`);
+// }
+// countNum("ad2a54y79wet0sfgb9");
 // //MIT TASK "A"
 // let hisob = 0;
 // function countLetter(a, word) {
