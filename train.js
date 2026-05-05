@@ -1,64 +1,71 @@
-//MIT TASK-D
-class Shop {
-  constructor(non, lagmon, kola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.kola = kola;
-  }
-
-  //qoldiqni tekshiruvchi metod
-  qoldiq() {
-    return `QOLGAN MAHSULOTLAR:
-    Non: ${this.non}
-    Lagmon: ${this.lagmon}
-    Kola: ${this.kola}`;
-  }
-  //sotuvchi metod
-  sotish(name, count) {
-    if (name == "non") {
-      if (this.non < count) {
-        return "Mahsulot yetarli emas";
-      }
-      this.non -= count;
-      return `Magazindan ${count} ta ${name} sotildi!`;
-    }
-    if (name == "lagmon") {
-      if (this.lagmon < count) {
-        return "Mahsulot yetarli emas";
-      }
-      this.lagmon -= count;
-      return `Magazindan ${count} ta ${name} sotildi!`;
-    }
-    if (name == "kola") {
-      if (this.kola < count) {
-        return "Mahsulot yetarli emas";
-      }
-      this.kola -= count;
-      return `Magazindan ${count} ta ${name} sotildi!`;
-    }
-  }
-  //qabul qiluvchi metod
-  qabul(name, count) {
-    if (name == "non") {
-      this.non += count;
-      return `Magazin ombiriga ${count} ta ${name} qo'shildi!`;
-    }
-    if (name == "lagmon") {
-      this.lagmon += count;
-      return `Magazin ombiriga ${count} ta ${name} qo'shildi!`;
-    }
-    if (name == "kola") {
-      this.kola += count;
-      return `Magazin ombiriga ${count} ta ${name} qo'shildi!`;
-    }
-  }
+//MIT TASK-E
+function getReverse(word) {
+  return word.split("").reverse().join("");
 }
-const magazin = new Shop(3, 4, 5);
-console.log(magazin.qoldiq());
-console.log(magazin.sotish("lagmon", 2));
-console.log(magazin.qabul("non", 2));
-console.log(magazin.qoldiq());
-console.log(magazin.sotish("lagmon", 12));
+
+console.log(getReverse("Salom"));
+
+// //MIT TASK-D
+// class Shop {
+//   constructor(non, lagmon, kola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.kola = kola;
+//   }
+
+//   //qoldiqni tekshiruvchi metod
+//   qoldiq() {
+//     return `QOLGAN MAHSULOTLAR:
+//     Non: ${this.non}
+//     Lagmon: ${this.lagmon}
+//     Kola: ${this.kola}`;
+//   }
+//   //sotuvchi metod
+//   sotish(name, count) {
+//     if (name == "non") {
+//       if (this.non < count) {
+//         return "Mahsulot yetarli emas";
+//       }
+//       this.non -= count;
+//       return `Magazindan ${count} ta ${name} sotildi!`;
+//     }
+//     if (name == "lagmon") {
+//       if (this.lagmon < count) {
+//         return "Mahsulot yetarli emas";
+//       }
+//       this.lagmon -= count;
+//       return `Magazindan ${count} ta ${name} sotildi!`;
+//     }
+//     if (name == "kola") {
+//       if (this.kola < count) {
+//         return "Mahsulot yetarli emas";
+//       }
+//       this.kola -= count;
+//       return `Magazindan ${count} ta ${name} sotildi!`;
+//     }
+//   }
+//   //qabul qiluvchi metod
+//   qabul(name, count) {
+//     if (name == "non") {
+//       this.non += count;
+//       return `Magazin ombiriga ${count} ta ${name} qo'shildi!`;
+//     }
+//     if (name == "lagmon") {
+//       this.lagmon += count;
+//       return `Magazin ombiriga ${count} ta ${name} qo'shildi!`;
+//     }
+//     if (name == "kola") {
+//       this.kola += count;
+//       return `Magazin ombiriga ${count} ta ${name} qo'shildi!`;
+//     }
+//   }
+// }
+// const magazin = new Shop(3, 4, 5);
+// console.log(magazin.qoldiq());
+// console.log(magazin.sotish("lagmon", 2));
+// console.log(magazin.qabul("non", 2));
+// console.log(magazin.qoldiq());
+// console.log(magazin.sotish("lagmon", 12));
 
 //MIT_TASK_C
 // function count(word1, word2) {
