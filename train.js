@@ -1,9 +1,23 @@
-//MIT TASK-E
-function getReverse(word) {
-  return word.split("").reverse().join("");
+// MIT TASK_F
+function find(word) {
+  const soz = new Set();
+  for (let x of word) {
+    if (soz.has(x)) {
+      return true;
+    } else {
+      soz.add(x);
+    }
+  }
+  return "Bir hil harf yo'q";
 }
+console.log(find("Hello"));
 
-console.log(getReverse("Salom"));
+// //MIT TASK-E
+// function getReverse(word) {
+//   return word.split("").reverse().join("");
+// }
+
+// console.log(getReverse("Salom"));
 
 // //MIT TASK-D
 // class Shop {

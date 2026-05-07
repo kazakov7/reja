@@ -3,59 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Reja App</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+      body {
+        background: linear-gradient(135deg, #1e1f29, #3a3d5c);
+        min-height: 100vh;
+        color: white;
+      }
+
+      .main-card {
+        background: #2a2d3e;
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .title {
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .form-control {
+        border-radius: 30px;
+        border: none;
+        padding: 12px 20px;
+      }
+
+      .btn-primary {
+        border-radius: 30px;
+        padding: 10px 20px;
+      }
+
+      .list-group-item {
+        background: #3a3d5c;
+        color: white;
+        border: none;
+        border-radius: 15px !important;
+        margin-bottom: 10px;
+        transition: 0.2s;
+      }
+
+      .list-group-item:hover {
+        transform: scale(1.02);
+        background: #4a4e70;
+      }
+
+      .item-text {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .btn-sm {
+        border-radius: 20px;
+      }
+
+      .clean-all {
+        border-radius: 30px;
+        margin-top: 20px;
+        width: 100%;
+      }
+    </style>
   </head>
-  <body style="background-color: #b8bbd1">
+
+  <body>
     <div class="container">
-      <h1 class="display-4 text-center py-1">REJA VA MAQSASDLAR</h1>
+      <div class="main-card">
+        <h1 class="display-6 text-center py-2 title">
+          🎯 REJA VA MAQSADLAR
+        </h1>
 
-      <div class="jumbotron p-3 shadow-sm">
-        <form id="create-form" action="/create-item" method="post">
-          <div class="d-flex align-items-center">
-            <input
-              id="create-field"
-              name="reja"
-              autofocus
-              autocomplete="off"
-              class="form-control mr-3"
-              type="text"
-              style="flex: 1"
-            />
-            <button class="btn btn-primary" style="border-radius: 20px">
-              Yangi reja qo'shish
-            </button>
-          </div>
-        </form>
+        <div class="p-2">
+          <form id="create-form" action="/create-item" method="post">
+            <div class="d-flex align-items-center gap-2">
+              <input
+                id="create-field"
+                name="reja"
+                autofocus
+                autocomplete="off"
+                class="form-control"
+                type="text"
+                placeholder="Rejangizni yozing..."
+              />
+              <button class="btn btn-primary btn-lg">
+                 Qo'shish
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <ol id="item-list" class="list-group mt-3">
+          <% items.map(function(item){ %>
+          <li
+            class="list-group-item d-flex align-items-center justify-content-between"
+          >
+            <span class="item-text"><%=item.reja%></span>
+            
+            <div class="d-flex gap-2">
+              <button 
+                data-id="<%=item._id%>"
+                class="edit-me btn btn-secondary btn-sm"
+              >
+                <i class="fa-regular fa-pen-to-square" style="color: white;"></i>Tahrirlash
+              </button>
+
+              <button
+                data-id="<%=item._id%>"
+                class="delete-me btn btn-danger btn-sm"
+              >
+                <i class="fa-solid fa-delete-left" style="color: white;"></i>O'chirish
+              </button>
+            </div>
+          </li>
+          <% })%>
+        </ol>
+
+        <button type="button" class="clean-all btn btn-danger btn-lg">
+          <i class="fa-solid fa-trash-can" style="color: white;"></i><b>Hammasini o'chirish</b>
+        </button>
       </div>
-      <ul id="item-list" class="list-group pb-5">
-        <% items.map(function(item){ %>
-         <li
-          class="list-group-item list-group-item-info d-flex align-items-center justify-content-between"
-        >
-          <span class="item-text"><%=item.reja%></span>
-
-          <div>
-            <button data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">
-              Ozgartirish
-            </button>
-
-            <button data-id="<%=item._id%>" class="delete-me btn btn-danger btn-sm">Ochirish</button>
-          </div>
-        </li>
-       <% })%>
-        
-      </ul>
-      <button type="button" class="clean-all btn btn-danger btn-lg">Hammasini o'chirish</button>
     </div>
-    <script src="/browser.js">
-
-    </script>
+    <script src="/browser.js"></script>
   </body>
 </html>
