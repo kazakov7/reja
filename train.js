@@ -1,3 +1,15 @@
+// MIT TASK-G
+function BigNum(list) {
+  max = list[0];
+  for (son of list) {
+    if (son > max) {
+      max = son;
+    }
+  }
+  console.log(list.indexOf(max));
+}
+BigNum([33, -4, 77, 56, 329, 1]);
+
 // MIT TASK_F
 function find(word) {
   const soz = new Set();
@@ -10,7 +22,7 @@ function find(word) {
   }
   return "Bir hil harf yo'q";
 }
-console.log(find("Hello"));
+console.log(find("Helo"));
 
 // //MIT TASK-E
 // function getReverse(word) {
