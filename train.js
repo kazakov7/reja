@@ -1,28 +1,40 @@
-// MIT TASK-G
-function BigNum(list) {
-  max = list[0];
-  for (son of list) {
-    if (son > max) {
-      max = son;
+// MIT TASK-H
+function getPositive(word) {
+  arr = [];
+  for (x of word) {
+    if (x > 0) {
+      arr.push(x);
     }
   }
-  console.log(list.indexOf(max));
+  return arr.join("");
 }
-BigNum([33, -4, 77, 56, 329, 1]);
+console.log(getPositive([-1, 2, -3, -4, 8, 9, -3]));
 
-// MIT TASK_F
-function find(word) {
-  const soz = new Set();
-  for (let x of word) {
-    if (soz.has(x)) {
-      return true;
-    } else {
-      soz.add(x);
-    }
-  }
-  return "Bir hil harf yo'q";
-}
-console.log(find("Helo"));
+// MIT TASK-G
+// function BigNum(list) {
+//   max = list[0];
+//   for (son of list) {
+//     if (son > max) {
+//       max = son;
+//     }
+//   }
+//   console.log(list.indexOf(max));
+// }
+// BigNum([33, -4, 77, 56, 329, 1]);
+
+// // MIT TASK_F
+// function find(word) {
+//   const soz = new Set();
+//   for (let x of word) {
+//     if (soz.has(x)) {
+//       return true;
+//     } else {
+//       soz.add(x);
+//     }
+//   }
+//   return "Bir hil harf yo'q";
+// }
+// console.log(find("Helo"));
 
 // //MIT TASK-E
 // function getReverse(word) {
