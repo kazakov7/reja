@@ -1,14 +1,31 @@
-// MIT TASK-H
-function getPositive(word) {
-  arr = [];
-  for (x of word) {
-    if (x > 0) {
-      arr.push(x);
+// MIT TASK-I
+function majority(arr) {
+  let obj = {};
+  for (x of arr) {
+    obj[x] ? obj[x]++ : (obj[x] = 1);
+  }
+  max = 0;
+  result = 0;
+  for (x in obj) {
+    if (obj[x] > max) {
+      max = obj[x];
+      result = x;
     }
   }
-  return arr.join("");
+  return `${result} soni ${max} marta qatnashdi`;
 }
-console.log(getPositive([-1, 2, -3, -4, 8, 9, -3]));
+console.log(majority([1, 2, 3, 4, 5, 4, 3, 4]));
+// MIT TASK-H
+// function getPositive(word) {
+//   arr = [];
+//   for (x of word) {
+//     if (x > 0) {
+//       arr.push(x);
+//     }
+//   }
+//   return arr.join("");
+// }
+// console.log(getPositive([-1, 2, -3, -4, 8, 9, -3]));
 
 // MIT TASK-G
 // function BigNum(list) {
