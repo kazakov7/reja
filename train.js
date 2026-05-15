@@ -6,6 +6,7 @@ function majority(arr) {
   }
   max = 0;
   result = 0;
+
   for (x in obj) {
     if (obj[x] > max) {
       max = obj[x];
@@ -14,7 +15,7 @@ function majority(arr) {
   }
   return `${result} soni ${max} marta qatnashdi`;
 }
-console.log(majority([1, 2, 3, 4, 5, 4, 3, 4]));
+console.log(majority([1, 2, 3, 4, 4, 5, 4, 3, 4]));
 // MIT TASK-H
 // function getPositive(word) {
 //   arr = [];
