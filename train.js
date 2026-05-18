@@ -1,21 +1,34 @@
-// MIT TASK-I
-function majority(arr) {
-  let obj = {};
-  for (x of arr) {
-    obj[x] ? obj[x]++ : (obj[x] = 1);
-  }
-  max = 0;
-  result = 0;
-
-  for (x in obj) {
-    if (obj[x] > max) {
-      max = obj[x];
-      result = x;
+//  MIT TASK-J
+function getMax(gap) {
+  gap = gap.split(" ");
+  max = gap[0];
+  for (x of gap) {
+    if (x.length > max.length) {
+      max = x;
     }
   }
-  return `${result} soni ${max} marta qatnashdi`;
+  return max;
 }
-console.log(majority([1, 2, 3, 4, 4, 5, 4, 3, 4]));
+console.log(getMax("I come from uzbekistan"));
+
+// // MIT TASK-I
+// function majority(arr) {
+//   let obj = {};
+//   for (x of arr) {
+//     obj[x] ? obj[x]++ : (obj[x] = 1);
+//   }
+//   max = 0;
+//   result = 0;
+
+//   for (x in obj) {
+//     if (obj[x] > max) {
+//       max = obj[x];
+//       result = x;
+//     }
+//   }
+//   return `${result} soni ${max} marta qatnashdi`;
+// }
+// console.log(majority([1, 2, 3, 4, 4, 5, 4, 3, 4]));
 // MIT TASK-H
 // function getPositive(word) {
 //   arr = [];
