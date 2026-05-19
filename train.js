@@ -1,17 +1,29 @@
-//  MIT TASK-J
-function getMax(gap) {
-  gap = gap.split(" ");
-  max = gap[0];
-  for (x of gap) {
-    if (x.length > max.length) {
-      max = x;
+//Mit Task K
+function countVowels(word) {
+  unli = ["a", "e", "i", "o", "u"];
+  count = 0;
+  for (x of word.toLowerCase()) {
+    if (unli.includes(x)) {
+      count++;
     }
   }
-  return max;
+  return count;
 }
-console.log(getMax("I come from uzbekistan"));
+console.log(countVowels("String"));
+// //  MIT TASK-J
+// function getMax(gap) {
+//   gap = gap.split(" ");
+//   max = gap[0];
+//   for (x of gap) {
+//     if (x.length > max.length) {
+//       max = x;
+//     }
+//   }
+//   return max;
+// }
+// console.log(getMax("I come from uzbekistan"));
 
-// // MIT TASK-I
+// //  MIT TASK-I
 // function majority(arr) {
 //   let obj = {};
 //   for (x of arr) {
