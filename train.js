@@ -1,15 +1,25 @@
-//Mit Task K
-function countVowels(word) {
-  unli = ["a", "e", "i", "o", "u"];
-  count = 0;
-  for (x of word.toLowerCase()) {
-    if (unli.includes(x)) {
-      count++;
-    }
+//MIT TASK L
+function revSent(str) {
+  arr = [];
+  for (word of str.split(" ")) {
+    arr.push(word.split("").reverse().join(""));
   }
-  return count;
+  return arr.join(" ");
 }
-console.log(countVowels("String"));
+console.log(revSent("we like coding"));
+
+//Mit Task K
+// function countVowels(word) {
+//   unli = ["a", "e", "i", "o", "u"];
+//   count = 0;
+//   for (x of word.toLowerCase()) {
+//     if (unli.includes(x)) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// console.log(countVowels("String"));
 // //  MIT TASK-J
 // function getMax(gap) {
 //   gap = gap.split(" ");
